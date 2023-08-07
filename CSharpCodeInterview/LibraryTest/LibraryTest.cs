@@ -62,4 +62,34 @@ public class TestCSharpCodeInterview
     {
         Assert.Equal(expected, Thing.MergeTwoLists(list1.ToList(), list2.ToList()));
     }
+
+    /*
+        121. Best Time to Buy and Sell Stock
+        You are given an array prices where prices[i] is the price of a given stock on the ith day.
+        You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
+        Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
+    */
+    [Theory]
+    [InlineData(5, new int[] { 7, 1, 5, 3, 6, 4 })]
+    [InlineData(0, new int[] { 7, 6, 4, 3, 1 })]
+    public void MaxProfitTest(int expected, int[] inputs)
+    {
+        Assert.Equal(expected, Thing.MaxProfit(inputs));
+    }
+
+    /*
+    Valid Palindrome
+    A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters,
+    it reads the same forward and backward. Alphanumeric characters include letters and numbers.
+
+    Given a string s, return true if it is a palindrome, or false otherwise.
+    */
+    [Theory]
+    [InlineData(true, "A man, a plan, a canal: Panama")]
+    [InlineData(false, "race a car")]
+    [InlineData(true, " ")]
+    public void IsPalindromeTest(bool expected, string input)
+    {
+        Assert.Equal(expected, Thing.IsPalindrome(input));
+    }
 }

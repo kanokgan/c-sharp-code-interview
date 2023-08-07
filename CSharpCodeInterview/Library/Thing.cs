@@ -125,4 +125,60 @@ public static class Thing
 
         return sortedList;
     }
+
+    /*
+        121. Best Time to Buy and Sell Stock
+        You are given an array prices where prices[i] is the price of a given stock on the ith day.
+        You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
+        Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
+    */
+    public static int MaxProfit(int[] prices)
+    {
+        if (prices == null || prices.Length < 2)
+            return 0;
+
+        var maxProfit = 0;
+        var minValue = int.MaxValue;
+        for (var i = 0; i < prices.Length; i++)
+        {
+            if (prices[i] < minValue)
+            {
+                minValue = prices[i];
+            }
+
+            if (prices[i] - minValue > maxProfit)
+            {
+                maxProfit = prices[i] - minValue;
+            }
+        }
+
+        return maxProfit;
+    }
+
+    /*
+    Valid Palindrome
+    A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters,
+    it reads the same forward and backward. Alphanumeric characters include letters and numbers.
+
+    Given a string s, return true if it is a palindrome, or false otherwise.
+    */
+    public static bool IsPalindrome(string s)
+    {
+        var cleanedString = "";
+        foreach (var c in s)
+        {
+            if (char.IsLetterOrDigit(c))
+            {
+                cleanedString += char.ToLower(c);
+            }
+        }
+
+        var revertedString = "";
+        for (var i = cleanedString.Length - 1; i >= 0; i--)
+        {
+            revertedString += cleanedString[i];
+        }
+
+        return cleanedString == revertedString;
+    }
 }
