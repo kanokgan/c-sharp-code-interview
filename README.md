@@ -1,3 +1,13 @@
+**Quick commands**
+Build project
+```
+dotnet build
+```
+Run all tests
+```
+dotnet test
+```
+
 C# Code interview playground
 
 - .net core console application
