@@ -7,7 +7,7 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine($"The answer is {Thing.Get(19, 23)}");
+            Console.WriteLine("Hello World!");
         }
     }
 }
